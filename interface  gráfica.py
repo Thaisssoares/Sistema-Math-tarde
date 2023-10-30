@@ -2,7 +2,7 @@
 
 from lib import *
 import PySimpleGUI as psg
-
+psg.theme('Dark Grey 13')
 layou_frame = [
     [psg.Radio('Tabuada', 'btnRadio1', key='tabuada')],
     [psg.Radio('Fatorial', 'btnRadio1', key='fatorial', default=True)],
@@ -11,11 +11,11 @@ layou_frame = [
 layout = [
     [psg.Text('Informe um número: '), psg.InputText(key='numero'), psg.Frame('Opções: ', layou_frame)],
     [psg.Text("", key='resultado')],
-    [psg.Output(size=(12,6), key='resultado2')],
+    [psg.Output(size=(13,6), key='resultado2')],
     [psg.Button('Calcular'), psg.Button('Limpar')],
 ]
 
-window = psg.Window('Sistema Matemático do Senai', layout)
+window = psg.Window('Sistema Matemático', layout)
 
 while True:
     evento, valor = window.read()
